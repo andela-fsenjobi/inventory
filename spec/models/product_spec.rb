@@ -7,10 +7,26 @@ RSpec.describe Product, type: :model do
   end
 
   describe ".search" do
-    it "sould return the items with matching the search" do
-      product = Product.last
+    context "when record with matching name exists" do
+      it "should return the items with matching the search" do
+        product = Product.last
 
-      expect(model.search('femi')).to eq [product]
+        expect(model.search('femi')).to eq [product]
+      end
+    end
+
+    context "when matching record does not exists" do
+      it "should return an empty result" do
+        expect(model.search('ewjbnwepo')).to eq []
+      end
+    end
+
+    context "when record with matching category exists" do
+      it "should return an empty result" do
+        product = Product.last
+
+        expect(model.search('peo')).to eq [product]
+      end
     end
   end
 end

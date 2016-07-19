@@ -7,8 +7,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+      <nav>
+        <div class="container">
+
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">My Inventory</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="https://github.com/andela-fsenjobi/inventory">Me on Git</a></li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

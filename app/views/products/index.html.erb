@@ -1,0 +1,11 @@
+<h1>My Inventory</h1>
+<div>
+  <%= form_for "/search", remote: true do %>
+    <div>
+      <input type="text" id="search-input" />
+    </div>
+    <div>
+      <button type="submit" id="search-submit">Search</button>
+    </div>
+  <% end %>
+</div>

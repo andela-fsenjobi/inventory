@@ -1,16 +1,22 @@
 <h1>My Inventory</h1>
 <div>
 <%= form_tag("/search", method: "get") do %>
-    <div>
-      <input type="text" id="search-input" name="search_text"/>
-    </div>
-    <div>
-      <button class="btn" type="submit" id="search-submit">Search</button>
-    </div>
-  <% end %>
-<% if @products %>
+<div class="row">
+  <div class="col l8">
+    <input type="text" id="search-input" name="search_text"/>
+  </div>
+  <div class="col l4">
+    <button class="btn" type="submit" id="search-submit">Search</button>
+  </div>
+</div>
+<% end %>
+<% unless !@products || @products.empty? %>
   <div id="products-list" class="row">
     <%= render @products %>
   </div>
-  <% end %>
+<% else %>
+  <p>
+    No matches found!
+  </p>
+<% end %>
 </div>

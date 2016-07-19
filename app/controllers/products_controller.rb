@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search(search_params)
+    @products = Product.search(search_params[:search_text])
     render :index
   end
 

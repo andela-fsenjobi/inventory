@@ -1,0 +1,16 @@
+<h1>My Inventory</h1>
+<div>
+  <%= form_for "/search" do %>
+    <div>
+      <input type="text" id="search-input" name="search_text"/>
+    </div>
+    <div>
+      <button type="submit" id="search-submit">Search</button>
+    </div>
+  <% end %>
+<% if @products %>
+  <div id="products-list">
+    <%= render @products %>
+  </div>
+  <% end %>
+</div>
